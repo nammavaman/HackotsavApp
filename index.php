@@ -18,8 +18,8 @@ include('script/getprojectdetails.php')
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 
-<body>
-    <div class="bgimg">
+<body class="bgimg">
+    <div>
         <nav class="navbar navbar-expand-md bg-dark navbar-dark">
             <a class="navbar-brand font-weight-bold mx-auto" href="#">CADMUS</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsiblenavbar">
