@@ -13,18 +13,14 @@ if(isset($_POST['submit']))
     // echo ' Vehicles = '.$Vehicles;
     include('getprojectdetails.php');
 
-   
-    echo($Manpower>$EnteredManpower);
-    echo($Budget>$EnteredBudget);
-    echo($Tools>$EnteredTools);
-    echo($Vehicles>$EnteredVehicles);
+
     //compare new project input values here
     if($Manpower>$EnteredManpower && $Budget>$EnteredBudget && $Tools>$EnteredTools && $Vehicles>$EnteredVehicles)
     {
         $url = 'https://z9lqck4h2k.execute-api.ap-south-1.amazonaws.com/Hackotsav/projectdetails';
         $ch = curl_init($url);
         $jsonData = array(
-            'Project_ID' => 11,
+            'Project_ID' => (string)$nextid,
             'Budget' => $EnteredBudget,
             'Manpower' => $EnteredManpower,
             'ProjectStage' => 1,
@@ -37,6 +33,26 @@ if(isset($_POST['submit']))
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);  
         curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json')); 
         $result = curl_exec($ch);
+        curl_close($ch);
+        $url = 'https://1q4xuwd08e.execute-api.ap-south-1.amazonaws.com/Hackotsav/hackotsav';
+        $ch = curl_init($url);
+        $jsonData = array(
+            
+            'Manpower' => $Manpower-$EnteredManpower,
+            'Tools' => $Tools-$EnteredTools,
+            'Budget' => $Budget-$EnteredBudget,
+            'Identifier'=>1,
+            'Vehicles' => $Vehicles-$EnteredVehicles
+        );
+        $jsonDataEncoded = json_encode($jsonData);
+        curl_setopt($ch, CURLOPT_POST, 1);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $jsonDataEncoded);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);  
+        curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json')); 
+        $result = curl_exec($ch);
+        
+        curl_close($ch);
+       
         header("Location: /");
     }
 

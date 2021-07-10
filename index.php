@@ -47,8 +47,8 @@ include('script/getresources.php');
               <span>
                   <h2 class="text-white">Projects</h2>
               </span>
-              <!-- <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">New Project</button> -->
-              <!-- <div class="collapse" id="collapseExample"> -->
+              <!-- <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">New Project</button>
+              <div class="collapse" id="collapseExample"> -->
                   <div class="card text-white bg-dark card-body">
                       <form name="Database" action="script/addnewproject.php" method="post">
                           
