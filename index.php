@@ -1,5 +1,6 @@
 <?php
 include('script/getresources.php');
+include('script/getprojectdetails.php')
 ?>
 
 <!DOCTYPE html>
@@ -47,6 +48,43 @@ include('script/getresources.php');
               <span>
                   <h2 class="text-white">Projects</h2>
               </span>
+              <?php foreach ($array as $prjs) {?>
+                <div class="card text-white bg-dark mx-3">
+                  <div class="card-title">
+                    <h2>
+                      Project Id : <?php echo $prjs['Project_ID'] ?>
+                    </h2>
+                    <h2>
+                      Project Stage : <?php echo $prjs['ProjectStage'] ?>
+                    </h2>
+                  </div>
+                  <div class="card-body">
+                    <table class="table table-dark table-striped table-hover">
+                    <tr>
+                        <th>Resource Title</th>
+                        <th>Resources Alloted</th>
+                    </tr>
+                    <tr>
+                        <th>Manpower</th>
+                        <td><?php echo $prjs['Manpower']?></td>
+                    </tr>
+                    <tr>
+                        <th>Tools</th>
+                        <td><?php echo $prjs['Tools']?></td>
+                    </tr>
+                    <tr>
+                        <th>Budget</th>
+                        <td><?php echo $prjs['Budget']?></td>
+                    </tr>
+                    <tr>
+                        <th>Vehicles</th>
+                        <td><?php echo $prjs['Vehicles']?></td>
+                    </tr>
+                    </table>
+                  </div>
+                </div>
+                <br>
+              <?php } ?>
               <!-- <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">New Project</button>
               <div class="collapse" id="collapseExample"> -->
                   <div class="card text-white bg-dark card-body">

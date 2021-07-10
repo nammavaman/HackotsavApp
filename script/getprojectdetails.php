@@ -6,10 +6,6 @@ $line = file_get_contents($url);
 $array = json_decode($line,true);
 
 $last = end($array);
-$nextid = $last['Project_ID']+1;
-
-print_r($array);
-
-
+$nextid = $last['Project_ID']+2;
 
 ?>
