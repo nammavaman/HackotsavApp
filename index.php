@@ -12,6 +12,7 @@ include('script/getprojectdetails.php')
     <meta charset="utf-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -51,12 +52,10 @@ include('script/getprojectdetails.php')
               <?php foreach ($array as $prjs) {?>
                 <div class="card text-white bg-dark mx-3">
                   <div class="card-title">
-                    <h2>
+                    <h2 class="ml-3">
                       Project Id : <?php echo $prjs['Project_ID'] ?>
                     </h2>
-                    <h2>
-                      Project Stage : <?php echo $prjs['ProjectStage'] ?>
-                    </h2>
+                   
                   </div>
                   <div class="card-body">
                     <table class="table table-dark table-striped table-hover">
@@ -85,8 +84,8 @@ include('script/getprojectdetails.php')
                 </div>
                 <br>
               <?php } ?>
-              <!-- <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">New Project</button>
-              <div class="collapse" id="collapseExample"> -->
+              <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">New Project</button>
+              <div class="collapse" id="collapseExample">
                   <div class="card text-white bg-dark card-body">
                       <form name="Database" action="script/addnewproject.php" method="post">
                           
@@ -121,7 +120,7 @@ include('script/getprojectdetails.php')
                           <button type="submit" class="btn btn-primary" name="submit">Submit</button>
                       </form>
                   </div>
-              <!-- </div> -->
+              </div>
 
 
           </div>
@@ -129,7 +128,7 @@ include('script/getprojectdetails.php')
   </section>
   <hr>
   <!-- Resorces-->
-  <section id="resource">
+  <section id="resource" class="mx-4">
       <div>
           <h2 class="text-white">Resources</h2>
           <table class="table table-dark table-striped table-hover">
@@ -159,75 +158,7 @@ include('script/getprojectdetails.php')
   </section>
   <hr>
   </div>
-<!-- 
-    <section class="section-2 container-fluid p-0">
-        <div class="cover">
-          <div class="overlay"></div>
-          <div class="content text-center">
-            <h1>Some Features That Made Us Unique</h1>
-          </div>
-        </div>
-        <div class="container-fluid text-center">
-          <div class="numbers d-flex flex-md-row flex-wrap justify-content-center">
-            <div class="rect">
-              <h1>1253</h1>
-              <p>Happy Client</p>
-            </div>
-            <div class="rect">
-              <h1>6784</h1>
-              <p>USERS </p>
-            </div>
-            <div class="rect">
-              <h1>9152</h1>
-              <p>Total Projects</p>
-            </div>
-          </div>
-        </div>
-
-        <section class="section-3 container-fluid p-0 text-center">
-            <div class="row">
-              <div class="col-md-12 col-sm-12">
-                <h1>Download Our App for all Platform</h1>
-                <p>
-                  CADMUS.INC  
-                  
-                </p>
-              </div>
-            </div>
-            <div class="platform row">
-              <div class="col-md-6 col-sm-12 text-right">
-                <div class="desktop shadow-lg">
-                  <div class="d-flex flex-row justify-content-center">
-                    <i class="fas fa-desktop fa-3x py-2 pr-3"></i>
-                    <div class="text text-left">
-                      <h3 class="pt-1 m-0">Desktop</h3>
-                      <p class="p-0 m-0">On website</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6 col-sm-12 text-left">
-                <div class="desktop shadow-lg">
-                  <div class="d-flex flex-row justify-content-center">
-                    <i class="fas fa-mobile-alt fa-3x py-2 pr-3"></i>
-                    <div class="text text-left">
-                      <h3 class="pt-1 m-0">On Mobile</h3>
-                      <p class="p-0 m-0">On Play Store</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-       -->
-
-
-
-
-
-
-
-    
+  
 
 </body>
 </html>
