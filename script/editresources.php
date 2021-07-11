@@ -38,7 +38,7 @@ if(isset($_POST['submit']))
             
         curl_close($ch);
         
-        header("Location: /");
+        header("Location: /#scrollspyHeading3");
 
 
     }
