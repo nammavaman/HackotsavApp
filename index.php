@@ -22,32 +22,33 @@ include('script/getprojectdetails.php')
 <body class="bgimg">
     <div>
         <nav class="navbar navbar-expand-md bg-dark navbar-dark">
-            <a class="navbar-brand font-weight-bold mx-auto" href="#">CADMUS</a>
+            <a class="navbar-brand font-weight-bold mx-auto" href="/">CADMUS</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsiblenavbar">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse text-center" id="collapsiblenavbar">
                 <ul class="navbar-nav ml-auto">
                     <li class="navbar-item">
-                        <a class="nav-link text-white" href="#">ABOUT</a>
+                        <a class="nav-link text-white" href="#scrollspyHeading1">PROJECT</a>
                     </li>
                     <li class="navbar-item">
-                        <a class="nav-link text-white" href="#">PROJECT</a>
+                        <a class="nav-link text-white" href="#scrollspyHeading2">ADD NEW PROJECT</a>
                     </li>
                     <li class="navbar-item">
-                        <a class="nav-link text-white" href="#">RESOURCE</a>
+                        <a class="nav-link text-white" href="#scrollspyHeading3">RESOURCE</a>
                     </li>
                     
                 </ul>
             </div>
         </nav>
+    <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-offset="0" class="scrollspy-example" tabindex="0">
     <div class="container-fluid">
       <hr>
       <!-- Projects-->
       <section id="project">
           <div>
               <span>
-                  <h2 class="text-white">Projects</h2>
+                  <h2 class="text-white" id="scrollspyHeading1">Projects</h2>
               </span>
               <?php foreach ($array as $prjs) {?>
                 <div class="card text-white bg-dark mx-3">
@@ -84,7 +85,7 @@ include('script/getprojectdetails.php')
                 </div>
                 <br>
               <?php } ?>
-              <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">New Project</button>
+              <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" id="scrollspyHeading2">New Project</button>
               <div class="collapse" id="collapseExample">
                   <div class="card text-white bg-dark card-body">
                       <form name="Database" action="script/addnewproject.php" method="post">
@@ -129,8 +130,9 @@ include('script/getprojectdetails.php')
   <hr>
   <!-- Resorces-->
   <section id="resource" class="mx-4">
+      <form action="script/editresources.php" method="post">
       <div>
-          <h2 class="text-white">Resources</h2>
+          <h2 class="text-white" id="scrollspyHeading3">Resources</h2>
           <table class="table table-dark table-striped table-hover">
               <tr>
                   <th>Resource Title</th>
@@ -138,24 +140,31 @@ include('script/getprojectdetails.php')
               </tr>
               <tr>
                   <th>Manpower</th>
-                  <td><?php echo $Manpower?></td>
+                  <td><input type="number" class="form-control" id="mpower" placeholder="<?php echo $Manpower?>" name="Manpower"></td>
               </tr>
               <tr>
                   <th>Tools</th>
-                  <td><?php echo $Tools?></td>
+                  <td><input type="number" class="form-control" id="buget" placeholder="<?php echo $Tools?>" name="Tools"></td>
               </tr>
               <tr>
                   <th>Budget</th>
-                  <td><?php echo $Budget?></td>
+                  <td><input type="number" class="form-control" id="buget" placeholder="<?php echo $Budget?>" name="Budget"></td>
               </tr>
               <tr>
                   <th>Vehicles</th>
-                  <td><?php echo $Vehicles?></td>
+                  <td><input type="number" class="form-control" id="vehicle" placeholder="<?php echo $Vehicles?>" name="Vehicles"></td>
+              </tr>
+              <tr>
+                  <td></td>
+                  <td><button type="submit" class="btn btn-primary" name="submit">Submit</button><td>
               </tr>
           </table>
 
       </div>
+      </form>
+      
   </section>
+    </div>
   <hr>
   </div>
   
