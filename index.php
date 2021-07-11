@@ -46,7 +46,6 @@ include('script/getprojectdetails.php')
           <div>
               <span>
                   <h2 class="text-white" id="scrollspyHeading1">Projects</h2>
-                  <h2 class="text-white p-3">Projects</h2>
               </span>
               <?php foreach ($array as $prjs) {?>
                 <div class="card text-white bg-dark mx-3">
