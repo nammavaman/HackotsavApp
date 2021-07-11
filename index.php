@@ -85,32 +85,32 @@ include('script/getprojectdetails.php')
               <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" id="scrollspyHeading2">New Project</button>
               <div class="collapse" id="collapseExample">
                   <div class="card text-white bg-dark card-body">
-                      <form name="Database" action="script/addnewproject.php" method="post">
+                      <form  class="needs-validation" novalidate name="Database" action="script/addnewproject.php" method="post">
                           
                           <div class="mb-3">
                               <label for="vehicle" class="form-label">Vehicle Required</label>
-                              <input type="number" class="form-control" id="vehicle" placeholder="Vehicle Required" name="Vehicles">
+                              <input type="number" class="form-control" id="vehicle" placeholder="Vehicle Required" name="Vehicles" required>
                               <span id="passwordHelpInline" class="form-text">
                                   <?php echo $Vehicles?> Available.
                               </span>
                           </div>
                           <div class="mb-3">
                               <label for="tool" class="form-label">Tools Required</label>
-                              <input type="number" class="form-control" id="tool" placeholder="Tools Required" name="Tools">
+                              <input type="number" class="form-control" id="tool" placeholder="Tools Required" name="Tools" required>
                               <span id="passwordHelpInline" class="form-text">
                                   <?php echo $Tools?> Available.
                               </span>
                           </div>
                           <div class="mb-3">
                               <label for="mpower" class="form-label">Man Power</label>
-                              <input type="number" class="form-control" id="mpower" placeholder="Man Power" name="Manpower">
+                              <input type="number" class="form-control" id="mpower" placeholder="Man Power" name="Manpower" required>
                               <span id="passwordHelpInline" class="form-text">
                                   <?php echo $Manpower?> Available.
                               </span>
                           </div>
                           <div class="mb-3">
                               <label for="buget" class="form-label">Estimated Budget</label>
-                              <input type="number" class="form-control" id="buget" placeholder="Estimated Budget" name="Budget">
+                              <input type="number" class="form-control" id="buget" placeholder="Estimated Budget" name="Budget" required>
                               <span id="passwordHelpInline" class="form-text">
                                   <?php echo $Budget?>  Available.
                               </span>
@@ -164,7 +164,29 @@ include('script/getprojectdetails.php')
     </div>
   <hr>
   </div>
- 
+      <div class="py-2 bg-dark text-light bg-dark">
+        <p class="text-center">Cadmus&#169; | 2021</p>
+
+    </div>
+    
+    <script>
+        (function () {
+            'use strict'
+
+            var forms = document.querySelectorAll('.needs-validation')
+            Array.prototype.slice.call(forms)
+                .forEach(function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (!form.checkValidity()) {
+                            event.preventDefault()
+                            event.stopPropagation()
+                        }
+
+                        form.classList.add('was-validated')
+                    }, false)
+                })
+        })()
+    </script> 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
