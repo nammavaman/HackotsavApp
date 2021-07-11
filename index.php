@@ -11,10 +11,6 @@ include('script/getprojectdetails.php')
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <meta charset="utf-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
@@ -36,6 +32,7 @@ include('script/getprojectdetails.php')
                     </li>
                     <li class="navbar-item">
                         <a class="nav-link text-white" href="#scrollspyHeading3">RESOURCE</a>
+
                     </li>
                     
                 </ul>
@@ -45,10 +42,11 @@ include('script/getprojectdetails.php')
     <div class="container-fluid">
       <hr>
       <!-- Projects-->
-      <section id="project">
+      <section><a id="project"></a>
           <div>
               <span>
                   <h2 class="text-white" id="scrollspyHeading1">Projects</h2>
+                  <h2 class="text-white p-3">Projects</h2>
               </span>
               <?php foreach ($array as $prjs) {?>
                 <div class="card text-white bg-dark mx-3">
@@ -167,7 +165,11 @@ include('script/getprojectdetails.php')
     </div>
   <hr>
   </div>
-  
+ 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> 
 
 </body>
 </html>
